@@ -1,0 +1,43 @@
+<% layout('./BootStrap/Layout') %>
+<%- include("./Bootstrap/successFlash") %>
+<div class="d-flex justify-content-center my-3">
+<form action="/inventory/register" method="POST" novalidate class="needs-validation col-md-6 col-lg-4 col-sm-8 shadow p-3 mb-5 bg-white rounded">
+    <h3 class="text-center">Create Account</h3>
+    <div class="form-group mt-3  ">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5U2WovIemDDpETllVmeodsgvuxUkaDc2Cag&usqp=CAU">
+    </div>
+    <div class="form-group mt-3  ">
+      <input name="email" type="email" class="form-control mt-1 " id="Title" placeholder="email" required>
+
+    </div>
+
+
+    <div class="form-group mt-3 ">
+      <input name="username" type="text" class="form-control mt-2" id="username" placeholder="username" required>
+
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+
+    </div>
+
+
+    <div class="form-group mt-3 ">
+      <input name="password" type="password" class="form-control mt-2" id="password" placeholder="password" required>
+
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+
+    </div>
+    <div class="form-group my-3">
+      <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+
+    <div class="form-group my-3">
+      <h6>Have Already an account ? <a class="text-danger text-decoration-none pe-auto" href="/inventory/login"> Login Here</a> </h6>
+  </div>
+   
+   
+  </form>
+</div>

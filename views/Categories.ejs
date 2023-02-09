@@ -1,0 +1,26 @@
+<% layout('./BootStrap/Layout') %>
+<%- include("./Bootstrap/successFlash")%>
+
+<% if(Categories.length > 0) { %>
+<div class="d-flex justify-content-center row">
+<div class="list-group col-6">
+    <h4 class="text-center mt-5">Select Category</h4>
+   <% for(let Category of Categories) {%>
+    <div class="d-flex bd-highlight mb-0 input-group">
+        <div class="p-1 w-75 bd-highlight"><a href="/inventory/ProductsOfCategory?category=<%=Category%>" class="text-decoration-none w-75"><button type="button" class="list-group-item list-group-item-action">View <%= Category %> Products</button></a></div>
+        <div class="p-1 flex-shrink-1 bd-highlight"><a href="/inventory/DeleteCategory?category=<%=Category%>" ><button class="btn btn-danger">delete</button></a></div>
+      </div>
+    <%}%>
+    <div class="mt-2">
+        <a href="/inventory/AddCategory" class="text-decoration-none"><button class="btn btn-info">Add Category</button> </a>
+    </div>
+</div> 
+</div> 
+<% } else { %>
+    <h6 class="text-center mt-5">Sorry no categories exist</h6>
+    <div class="mt-4 text-center ">
+        <a href="/inventory/AddCategory" class="text-decoration-none"><button class="btn btn-info">Add Category</button> </a>
+    </div>
+    <%}%>
+
+

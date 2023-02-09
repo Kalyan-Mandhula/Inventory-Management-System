@@ -1,0 +1,44 @@
+
+<% layout('./BootStrap/Layout') %>
+<%- include("./Bootstrap/successFlash")%>
+
+
+ <% if(List.length > 0) { %>
+    <div class="d-flex justify-content-center my-1">
+        <div class="col-10 my-3">
+          <h2 class="text-center">All <%=name%> Products</h2>
+        </div>
+     </div>
+ <% for(let product of List) { %>
+     <div class="d-flex justify-content-center my-1">
+     <div class="card col-10" mb-4>
+         <div class="row" >
+                 <img class="col-md-4 img-fluid " alt="" src="<%=product.Image%>">
+             <div class="col-md-8">
+                 <div class="card-body">
+                     <h5 class="card-title"><%= product.Title %> </h5>
+                     <p class="card-text">
+                         Category :
+                         <small class="text-muted" ><%= product.Category%></small>
+                     </p>
+                     <%if(product.Brand.length > 2) {%>
+                     <p class="card-text">
+                        Brand :
+                        <small class="text-muted" ><%= product.Brand%></small>
+                    </p>
+                    <%}%>
+                    <p class="card-text">Price : &#8377; <%= product.Price %></p>
+                     <a class="btn btn-primary" href="/inventory/<%=product._id%>/show">View <%=product.Title%></a>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+     <%} } else {%>
+        <h6 class="text-center mt-5">Sorry no products available</h6>
+        <div class="mt-4 text-center ">
+            <a href="/inventory/AddProduct" class="text-decoration-none"><button class="btn btn-info">Add Product</button> </a>
+        </div>
+        <%}%>
+
+    
